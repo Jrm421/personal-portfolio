@@ -27,6 +27,14 @@ body {
     overflow-x: hidden;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* ==========================================================================
    2. DECORATIVE BACKGROUND
    ========================================================================== */
@@ -336,6 +344,20 @@ body {
         margin-left: 20px;
         width: calc(100% - 20px);
         transform: none !important;
+    }
+
+
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #nav-menu-toggle {
+        display: block; /* Ensure it's visible */
+        z-index: 1001;
     }
     /* --- end EXPERIENCE SECTION media --- */
 
@@ -1060,3 +1082,4 @@ input:-webkit-autofill:active {
 .input-group textarea {
     color: white !important;
 }
+
