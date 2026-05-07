@@ -161,10 +161,10 @@ body {
    4. HERO SECTION
    ========================================================================== */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 80px;
     position: relative;
 }
 
@@ -256,6 +256,15 @@ body {
 /* ==========================================================================
    7. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
+/* for 1024px*/
+@media (min-width: 1024px) {
+    .hero-container {
+        gap: 40px; /* Brings the text and image closer together */
+        padding: 0 2rem; /* Uses a fixed smaller padding instead of 5% */
+    }
+}
+/*end for 1024px*/
+
 @media (max-width: 768px) {
     .container {
         width: 100% !important;
@@ -312,6 +321,8 @@ body {
         order: 1; /* Puts image ABOVE the text */
         justify-content: center;
         width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
     }
 
     .hero-image img {
