@@ -256,14 +256,35 @@ body {
 /* ==========================================================================
    7. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
-/* for 1024px*/
-@media (min-width: 1024px) {
-    .hero-container {
-        gap: 40px; /* Brings the text and image closer together */
-        padding: 0 2rem; /* Uses a fixed smaller padding instead of 5% */
+/* fix for the large gap on tablet view*/
+@media (max-width: 1024px) {
+    .hero {
+        height: auto !important; /* Allow the section to shrink to fit content */
+        min-height: 80vh; /* Keeps it large, but not excessively so */
+        padding: 120px 0 60px; /* Space for the fixed header + bottom gap */
+        display: flex;
+        align-items: center;
     }
-}
-/*end for 1024px*/
+
+    .hero-container {
+        flex-direction: column-reverse; /* Put text under image for better flow */
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-image {
+        max-width: 350px; /* Smaller image for tablet */
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Scale down the title */
+        margin-top: 1rem;
+    }
+
+    .hero-content p {
+        margin-bottom: 2rem;
+    }
+}/*end for fix table view*/
 
 @media (max-width: 768px) {
     .container {
