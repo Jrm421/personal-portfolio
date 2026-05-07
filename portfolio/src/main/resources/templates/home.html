@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Jerome V Morales - Portfolio</title>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+
+</head>
+
+
+
+<body>
+
+
+<!--  background shapes (keep these here) -->
+<div class="floating-shape shape-1"></div>
+<div class="floating-shape shape-2"></div>
+<div class="floating-shape shape-3"></div>
+
+    <!-- loading animation-->
+    <div th:replace="~{fragments/loader :: loader}"></div>
+    <!-- header-->
+    <div th:replace="~{fragments/header :: site-header}"></div>
+    <!--  hero section-->
+    <div th:replace="~{fragments/hero :: hero-section}"></div>
+    <!--  projects section-->
+    <div th:replace="~{fragments/projects :: projects-section}"></div>
+    <!--  about section-->
+    <div th:replace="~{fragments/about :: about-section}"></div>
+    <!--  experience section-->
+    <div th:replace="~{fragments/experience :: experience-section}"></div>
+    <!--  achievements section-->
+    <div th:replace="~{fragments/achievements :: achievements-section}"></div>
+    <!--  contact section-->
+    <div th:replace="~{fragments/contact :: contact-section}"></div>
+    <!--  footer section-->
+    <div th:replace="~{fragments/footer :: footer-section}"></div>
+
+
+
+    <!--  PUT YOUR SCRIPT PATH HERE -->
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

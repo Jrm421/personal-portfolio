@@ -1,0 +1,35 @@
+
+<th:block th:fragment="hero-section">
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h4 class="hero-subtitle">Computer <span>Science Graduate</span></h4>
+                <h1 class="hero-title"> Hi, I'm <span>Jerome V. Morales</span></h1>
+                <h2 class="hero-job">Software Developer & Web Designer</h2>
+                <p class="hero-description">
+                    Skilled in software development, web design, and IT project management.
+                    I apply technical expertise and leadership to achieve organizational success.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- The outer dark container -->
+                <div class="outer-frame">
+                    <div class="image-wrapper">
+                        <img th:src="@{/images/jerome-profile2.png}" alt="Jerome V. Morales">
+                    </div>
+                </div>
+
+                <!-- Your floating cards stay outside the frame -->
+<!--                <div class="floating-card dev-card">...</div>-->
+<!--                <div class="floating-card mentor-card">...</div>-->
+            </div>
+
+        </div>
+    </section>
+
+
+</th:block>
