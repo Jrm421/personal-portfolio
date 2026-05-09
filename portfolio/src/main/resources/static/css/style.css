@@ -234,10 +234,9 @@ body {
 .hero-image {
     flex: 1;
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    /*justify-content: flex-end;*/
+    /*-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);*/
+    /*mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);*/
 }
 
 .hero-image img {
@@ -256,14 +255,18 @@ body {
 /* ==========================================================================
    7. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
+/* --- TABLET VIEW (For iPad/Tablets) --- */
 /* fix for the large gap on tablet view*/
 @media (max-width: 1024px) {
     .hero {
-        height: auto !important; /* Allow the section to shrink to fit content */
-        min-height: 80vh; /* Keeps it large, but not excessively so */
-        padding: 120px 0 60px; /* Space for the fixed header + bottom gap */
-        display: flex;
-        align-items: center;
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+    /* Ensure the profile picture isn't too large for mobile screens */
+    .hero-image img {
+        max-width: 220px;
+        height: auto;
+        margin: 0 auto;
     }
 
     .hero-container {
@@ -271,22 +274,38 @@ body {
         text-align: center;
         gap: 2rem;
     }
-    .hero-image {
-        max-width: 350px; /* Smaller image for tablet */
-        margin: 0 auto;
-    }
+    /*.hero-image {*/
+    /*    max-width: 200px !important; !* Mas maliit na image para sa phone *!*/
+    /*    margin: 0 auto 20px !important;*/
+    /*}*/
 
     .hero-content h1 {
-        font-size: 2.5rem; /* Scale down the title */
-        margin-top: 1rem;
+        font-size: 1.8rem !important; /* Smaller title */
+        margin-bottom: 10px;
     }
+
 
     .hero-content p {
         margin-bottom: 2rem;
     }
+    .hero-btns {
+        justify-content: center; /* Center the buttons */
+        flex-direction: column;  /* Stack buttons on top of each other if very narrow */
+        width: 100%;
+        max-width: 300px;
+        margin: 2rem auto 0;
+    }
 }/*end for fix table view*/
 
 @media (max-width: 768px) {
+    .hero .container {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        text-align: center;
+        gap: 20px;
+        padding-top: 80px; /* Prevents the fixed header from covering the image */
+    }
+
     .container {
         width: 100% !important;
         padding-left: 20px !important;
@@ -299,7 +318,8 @@ body {
     }
 
     .hero-content h2 {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 15px;
     }
     .header .container {
         display: flex;
@@ -335,13 +355,15 @@ body {
     }
 
     .hero-content {
-        order: 2; /* Puts text BELOW the image */
+        text-align: center;
+        order: 2; /* Places the text content below the image */
     }
 
     .hero-image {
         order: 1; /* Puts image ABOVE the text */
         justify-content: center;
         width: 100%;
+        margin-bottom: 20px; /* Adds space between the image and the text below */
         -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
         mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
     }
@@ -461,12 +483,9 @@ body {
     .input-group input,
     .input-group textarea {
         max-width: 100% !important; /* Ensure inputs don't poke out */
-    }
+    }/*end achievement and contact*/
 
-
-    /*end achievement and contact*/
-
-} /*end media*/
+} /*end @media*/
 
 /* --- LOADER STYLES --- */
 .loader-wrapper {
@@ -655,7 +674,8 @@ body {
 
 /* --- 8. PROJECTS SECTION --- */
 .projects-section {
-    padding: 100px 0;
+    padding-top: 20px !important;
+    margin-top: 0 !important;
 }
 
 /* The Grid Container */
@@ -883,7 +903,8 @@ body {
 
 /* --- CONTACT SECTION --- */
 .contact-section {
-    padding: 140px 0;
+    padding: 90px 0;
+
 }
 
 .contact-grid {
@@ -956,6 +977,12 @@ body {
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+.info-details p{
+    color: var(--light-color);
+    font-weight: 600;
+    text-decoration: none;
+   
 }
 
 .email-wrapper {
