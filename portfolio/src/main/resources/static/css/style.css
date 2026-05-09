@@ -679,7 +679,7 @@ body {
             black 90%,
             transparent 100%
     );
-    
+
 }
 /* Container for your profile picture */
 .hero-image {
@@ -818,6 +818,7 @@ body {
     height: 100%;
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
     opacity: 0.3;
+
 }
 
 /* THE ITEM: Using Grid to lock the dot and content together */
