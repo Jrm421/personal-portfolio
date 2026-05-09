@@ -369,9 +369,22 @@ body {
     }
 
     .hero-image img {
-        max-width: 250px; /* Smaller image for mobile so it doesn't crowd text */
-        margin: 0 auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
+    /*!* This creates the faded effect at the bottom of your photo *!*/
+    /*.hero-image::after {*/
+    /*    content: "";*/
+    /*    position: absolute;*/
+    /*    bottom: 0;*/
+    /*    left: 0;*/
+    /*    width: 100%;*/
+    /*    height: 30%; !* Adjust this percentage to control how high the fade goes *!*/
+    /*    background: linear-gradient(to bottom, transparent, var(--bg-dark));*/
+    /*    !* Ensure var(--bg-dark) matches your actual background color *!*/
+    /*}*/
 
     .hero-title {
         font-size: 2.8rem; /* Scale down title size for small screens */
@@ -645,12 +658,53 @@ body {
 }
 
 /* --- IMAGE FRAME & MASKING --- */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+.image-wrapper {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 1. Linear Gradient Mask for Top and Bottom Fade */
+    -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+    );
+    mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+    );
+    
 }
+/* Container for your profile picture */
+.hero-image {
+    position: relative;
+    display: inline-block;
+    /* This creates a smooth fade on all four edges */
+    -webkit-mask-image: radial-gradient(
+            ellipse 90% 90% at 50% 50%,
+            black 40%,
+            transparent 100%
+    );
+    mask-image: radial-gradient(
+            ellipse 90% 90% at 50% 50%,
+            black 40%,
+            transparent 100%
+    );
+}
+
+.hero-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    /* Ensures the image doesn't get distorted */
+    object-fit: contain;
+}/* end */
 
 .outer-frame {
     position: relative;
