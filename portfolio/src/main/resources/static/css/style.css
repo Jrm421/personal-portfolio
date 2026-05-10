@@ -245,6 +245,17 @@ body {
     height: auto;
     object-fit: cover;
     animation: floatImage 6s ease-in-out infinite;
+    /* 2. Apply the Fade Mask to hide the cuts */
+    -webkit-mask-image: radial-gradient(
+            circle at center,
+            black 35%,
+            transparent 85%
+    );
+    mask-image: radial-gradient(
+            circle at center,
+            black 35%,
+            transparent 85%
+    );
 }
 
 @keyframes floatImage {
@@ -295,7 +306,7 @@ body {
         max-width: 300px;
         margin: 2rem auto 0;
     }
-}/*end for fix table view*/
+}/*end for fix table view/media 1024px*/
 
 @media (max-width: 768px) {
     .hero .container {
@@ -375,14 +386,15 @@ body {
         object-fit: contain;
     }
     /*!* This creates the faded effect at the bottom of your photo *!*/
-    /*.hero-image::after {*/
+    /*.hero-image img{*/
     /*    content: "";*/
     /*    position: absolute;*/
     /*    bottom: 0;*/
     /*    left: 0;*/
     /*    width: 100%;*/
     /*    height: 30%; !* Adjust this percentage to control how high the fade goes *!*/
-    /*    background: linear-gradient(to bottom, transparent, var(--bg-dark));*/
+    /*    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);*/
+    /*    mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);*/
     /*    !* Ensure var(--bg-dark) matches your actual background color *!*/
     /*}*/
 
@@ -498,7 +510,7 @@ body {
         max-width: 100% !important; /* Ensure inputs don't poke out */
     }/*end achievement and contact*/
 
-} /*end @media*/
+} /*end @media 768px*/
 
 /* --- LOADER STYLES --- */
 .loader-wrapper {
@@ -704,6 +716,7 @@ body {
     height: auto;
     /* Ensures the image doesn't get distorted */
     object-fit: contain;
+
 }/* end */
 
 .outer-frame {
@@ -718,7 +731,9 @@ body {
 .image-wrapper img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block;
+    /* This ensures your suit and hair don't hit the very edge of the box */
+    padding: 10px;
     /* Subtle float animation */
     animation: floatImage 6s ease-in-out infinite;
 }
@@ -1198,6 +1213,7 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: white !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+
 
 /* Siguraduhin na ang text ay laging puti sa loob ng input */
 .input-group input,
