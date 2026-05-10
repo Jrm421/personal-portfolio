@@ -248,13 +248,13 @@ body {
     /* 2. Apply the Fade Mask to hide the cuts */
     -webkit-mask-image: radial-gradient(
             circle at center,
-            black 35%,
-            transparent 85%
+            black 40%,
+            transparent 80%
     );
     mask-image: radial-gradient(
             circle at center,
-            black 35%,
-            transparent 85%
+            black 40%,
+            transparent 80%
     );
 }
 
